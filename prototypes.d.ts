@@ -13,6 +13,8 @@ interface Element {
   disable(): void;
   isDisabled(): boolean;
   isVisible(): boolean;
+  hide: () => void;
+  show: () => void;
 }
 
 // Extensions for NodeList
@@ -22,6 +24,8 @@ interface NodeList {
   trigger(event: string): void;
   on(event: string, callback: (event: Event) => void): void;
   enable(): void;
+  hide: () => void;
+  show: () => void;
 }
 
 // Extension for String

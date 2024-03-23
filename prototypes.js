@@ -93,6 +93,24 @@ if(typeof Element.prototype.isVisible !== 'function'){
     }
 }
 
+/**
+ * This adds function to call wrapper function hideElement
+ */
+if(typeof Element.prototype.hide !== 'function'){
+    Element.prototype.hide = function(){
+        hideElement(this);
+    }
+}
+
+/**
+ * This adds function to call wrapper function showElement
+ */
+if(typeof Element.prototype.show !== 'function'){
+    Element.prototype.show = function(){
+        showElement(this);
+    }
+}
+
 //prototypes for NodeList
 
 /**
@@ -142,6 +160,28 @@ if(typeof NodeList.prototype.enable !== 'function'){
     NodeList.prototype.enable = function(){
         for(const e of this){
             e.enable();
+        }
+    }
+}
+
+/**
+ * This adds function to call wrapper function hideElement
+ */
+if(typeof NodeList.prototype.hide !== 'function'){
+    NodeList.prototype.hide = function(){
+        for(e of this){
+            e.hide();
+        }
+    }
+}
+
+/**
+ * This adds function to call wrapper function showElement
+ */
+if(typeof NodeList.prototype.show !== 'function'){
+    ElemeNodeListnt.prototype.show = function(){
+        for(e of this){
+            e.show();
         }
     }
 }
