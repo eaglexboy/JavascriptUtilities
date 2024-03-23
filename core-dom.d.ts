@@ -1,9 +1,3 @@
-declare module 'core.js';
-
-// Utility functions (no need for type definitions as they are basic functions)
-// * isEmpty
-// * getComputedStyle
-
 // DOM Manipulation Functions
 /**
  * Add class(es) to an element

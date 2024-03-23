@@ -70,7 +70,7 @@ function isNumber(potentialNumber) {
 /**
  * This function will check if the provided obj is undefined or null
  * @param {*} obj Object to check
- * @returns 
+ * @returns {boolean} Result of check
  */
 function isUndefinedOrNull(obj) {
     return obj === undefined || obj === null;
@@ -100,7 +100,7 @@ function selfOrDefault(self, defaultValue, replaceOnEmpty = false) {
  * This method will check if object is Array, if not convert it to array. If value is undefined or
  * null then empty list is returned.
  * @param potentialArray Object to check if Array
- * @returns {*[]|*} Array
+ * @returns {*[]} Returns an Array
  */
 function toArray(potentialArray) {
     if(Array.isArray(potentialArray)){
@@ -113,7 +113,7 @@ function toArray(potentialArray) {
 /**
  * Will convert value to boolean
  * @param booleanString
- * @returns {boolean|*}
+ * @returns {boolean}
  */
 function toBoolean(booleanString) {
     if(isUndefinedOrNull(booleanString)){
