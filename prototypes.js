@@ -81,7 +81,7 @@ if(typeof Element.prototype.isDisabled !== 'function'){
 }
 
 /**
- * This adds function to call wrapper function disableElement
+ * This adds function to determine if the element is visible
  */
 if(typeof Element.prototype.isVisible !== 'function'){
     Element.prototype.isVisible = function(){
@@ -160,6 +160,17 @@ if(typeof NodeList.prototype.enable !== 'function'){
     NodeList.prototype.enable = function(){
         for(const e of this){
             e.enable();
+        }
+    }
+}
+
+/**
+ * This adds function to call wrapper function disableElement
+ */
+if(typeof NodeList.prototype.disable !== 'function'){
+    NodeList.prototype.disable = function(){
+        for(const e of this){
+            e.disable();
         }
     }
 }

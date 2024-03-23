@@ -24,6 +24,7 @@ interface NodeList {
   trigger(event: string): void;
   on(event: string, callback: (event: Event) => void): void;
   enable(): void;
+  disable(): void;
   hide: () => void;
   show: () => void;
 }
