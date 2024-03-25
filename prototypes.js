@@ -190,7 +190,7 @@ if(typeof NodeList.prototype.hide !== 'function'){
  * This adds function to call wrapper function showElement
  */
 if(typeof NodeList.prototype.show !== 'function'){
-    ElemeNodeListnt.prototype.show = function(){
+    NodeList.prototype.show = function(){
         for(e of this){
             e.show();
         }
