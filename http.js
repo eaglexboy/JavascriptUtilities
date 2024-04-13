@@ -112,11 +112,12 @@ async function makeHttpDeleteCall(url, payload, options={}) {
     else {
         payloadToSend = payload;
     }
-    
+
     return makeHttpCall(
         url,
         {
             ...options,
+            body: payloadToSend,
             method: Methods.DELETE,
             headers: {
                 ...options?.headers
