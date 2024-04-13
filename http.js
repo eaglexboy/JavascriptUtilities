@@ -165,3 +165,41 @@ async function makeHttpPostCall(url, payload, options = {}) {
     );
 }
 
+/**
+ * Function makes a HTTP PUT call
+ * @param {string} url URL to make call against
+ * @param {BodyInit | any} payload Payload to send with request
+ * @param {RequestInit} [options={}] Options to use with call
+ * @returns {Promise<Response>}
+ */
+async function makeHttpPutCall(url, payload, options = {}) {
+    let payloadToSend;
+
+    if(payload instanceof FormData){
+        payloadToSend = formDataToString(payload);
+        options.headers = {
+            ...options.headers,
+            'Content-Type': 'application/x-www-form-urlencoded'
+        };
+    }
+    else if(typeof payload === 'object'){
+        payloadToSend = JSON.stringify(payload);
+    }
+    else {
+        payloadToSend = payload;
+    }
+
+
+
+    return makeHttpCall(
+        url, 
+        {
+            ...options,
+            body: payloadToSend,
+            method: Methods.PUT,
+            headers: {
+                ...options?.headers
+            }
+        }
+    );
+}

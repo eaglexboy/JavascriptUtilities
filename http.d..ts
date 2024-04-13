@@ -25,9 +25,13 @@ declare function makeHttpDeleteCall(
 declare function makeHttpPostCall(
     url: string, payload: BodyInit| any, options: RequestInit): Promise<Response>;
 
+declare function makeHttpPutCall(
+    url: string, payload: BodyInit| any, options: RequestInit): Promise<Response>;
+
 export {
     Methods,
     makeHttpDeleteCall,
     makeHttpGetCall,
-    makeHttpPostCall
+    makeHttpPostCall,
+    makeHttpPutCall
 };
