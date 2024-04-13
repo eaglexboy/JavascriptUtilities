@@ -20,7 +20,7 @@ declare function makeHttpGetCall(
     url: string, options: RequestInit): Promise<Response>;
 
 declare function makeHttpDeleteCall(
-    url: string, options: RequestInit): Promise<Response>;
+    url: string, payload: BodyInit| any, options: RequestInit): Promise<Response>;
 
 declare function makeHttpPostCall(
     url: string, payload: BodyInit| any, options: RequestInit): Promise<Response>;

@@ -73,10 +73,10 @@ async function makeHttpCall(url, options) {
 /**
  * Function makes a HTTP GET call
  * @param {string} url URL to make call against
- * @param {RequestInit} options Options to use with call
+ * @param {RequestInit} [options={}] Options to use with call
  * @returns {Promise<Response>}
  */
-async function makeHttpGetCall(url, options) {
+async function makeHttpGetCall(url, options = {}) {
     return makeHttpCall(
         url,
         {
@@ -92,10 +92,27 @@ async function makeHttpGetCall(url, options) {
 /**
  * Function makes a HTTP DELETE call
  * @param {string} url URL to make call against
- * @param {RequestInit} options Options to use with call
+ * @param {BodyInit | any} payload Payload to send with request
+ * @param {RequestInit} [options={}] Options to use with call
  * @returns {Promise<Response>}
  */
-async function makeHttpDeleteCall(url, options) {
+async function makeHttpDeleteCall(url, payload, options={}) {
+    let payloadToSend;
+
+    if(payload instanceof FormData){
+        payloadToSend = formDataToString(payload);
+        options.headers = {
+            ...options.headers,
+            'Content-Type': 'application/x-www-form-urlencoded'
+        };
+    }
+    else if(typeof payload === 'object'){
+        payloadToSend = JSON.stringify(payload);
+    }
+    else {
+        payloadToSend = payload;
+    }
+    
     return makeHttpCall(
         url,
         {
@@ -115,11 +132,7 @@ async function makeHttpDeleteCall(url, options) {
  * @param {RequestInit} [options={}] Options to use with call
  * @returns {Promise<Response>}
  */
-async function makeHttpPostCall(
-    url,
-    payload,
-    options = {}
-) {
+async function makeHttpPostCall(url, payload, options = {}) {
     let payloadToSend;
 
     if(payload instanceof FormData){
