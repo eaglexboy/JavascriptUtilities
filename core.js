@@ -163,7 +163,7 @@ function toFloat(potentialNumber, defaultValue) {
 /**
  * Function to convert the provided string/number to a integer
  * @param {number|string} potentialNumber Potential string/number to convert to integer
- * @param {number} [defaultValue=0.0] Default value to use if potential number cannot be used
+ * @param {number} [defaultValue=0] Default value to use if potential number cannot be used
  * @returns 
  */
 function toInteger(potentialNumber, defaultValue) {
@@ -171,5 +171,5 @@ function toInteger(potentialNumber, defaultValue) {
         return defaultValue !== undefined ? defaultValue : 0;
     }
 
-    return (typeof potentialNumber === 'number') ? potentialNumber : parseInt(potentialNumber, 10);
+    return parseInt(potentialNumber, 10);
 };
