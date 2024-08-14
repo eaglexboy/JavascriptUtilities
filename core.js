@@ -154,7 +154,7 @@ function toCurrency(moneyValue, withSymbol = true){
  */
 function toFloat(potentialNumber, defaultValue) {
     if(!isNumber(potentialNumber)){
-        return !isUndefinedOrNull(defaultValue) ? defaultValue : 0.0;
+        return selfOrDefault(defaultValue, 0.0);
     }
 
     return (typeof potentialNumber === 'number') ? potentialNumber : parseFloat(potentialNumber);
@@ -168,7 +168,7 @@ function toFloat(potentialNumber, defaultValue) {
  */
 function toInteger(potentialNumber, defaultValue) {
     if(!isNumber(potentialNumber)){
-        return defaultValue !== undefined ? defaultValue : 0;
+        return selfOrDefault(defaultValue, 0);
     }
 
     return parseInt(potentialNumber, 10);
