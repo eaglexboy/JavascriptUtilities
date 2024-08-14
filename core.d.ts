@@ -75,4 +75,4 @@ declare function toFloat(potentialNumber: unknown, defaultValue: number): number
  * @param {number} [defaultValue=0.0] Default value to use if potential number cannot be used
  * @returns {number}
  */
-declare function toInteger(potentialNumber: number|string, defaultValue: number): number;
+declare function toInteger(potentialNumber: unknown, defaultValue: number): number;
