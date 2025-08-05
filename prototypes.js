@@ -180,7 +180,7 @@ if(typeof NodeList.prototype.disable !== 'function'){
  */
 if(typeof NodeList.prototype.hide !== 'function'){
     NodeList.prototype.hide = function(){
-        for(e of this){
+        for(const e of this){
             e.hide();
         }
     }
@@ -191,7 +191,7 @@ if(typeof NodeList.prototype.hide !== 'function'){
  */
 if(typeof NodeList.prototype.show !== 'function'){
     NodeList.prototype.show = function(){
-        for(e of this){
+        for(const e of this){
             e.show();
         }
     }
