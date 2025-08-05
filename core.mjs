@@ -1,3 +1,5 @@
+import prototypes from './prototypes.mjs';
+
 /**
  * This function will check if the provided obj is empty. If white space flag set it will consider
  * the object empty if it only has white spaces

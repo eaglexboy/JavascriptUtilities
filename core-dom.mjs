@@ -1,4 +1,4 @@
-import { isEmpty, isUndefinedOrNull, selfOrDefault } from "./core.mjs";
+import { isEmpty, isUndefinedOrNull } from "./core.mjs";
 
 /**
  * This function will add the provided classes to the element
