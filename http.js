@@ -12,7 +12,7 @@ const Methods = {
 
 /**
  * This function will return the default headers to use with a fetch call
- * @returns {Object} Object with default headers
+ * @returns {Record<string, string>} Object with default headers
  */
 function defaultHeaders(){
     return {};
@@ -35,7 +35,7 @@ function formDataToString(formData){
 /**
  * This function will get the payload from a response
  * @param {Respone} response Response object to get payload from
- * @returns {Object | string} Payload from response
+ * @returns {Promise<string | Record<string, unknown>>} Payload from response
  */
 async function getPayload(response){
     let payload;
