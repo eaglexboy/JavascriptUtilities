@@ -217,3 +217,34 @@ const showElement = (element) => {
         }
     }
 };
+
+/**
+ * Get the WebGL context from a canvas element
+ * @param {string|Element} canvas Canvas element or selector to get the canvas
+ * @returns {WebGL2RenderingContext|null} WebGL2 context or null if not available
+ */
+const getWebGLContext = (canvas) => {
+  let canvasToUse = canvas;
+
+  if (isUndefinedOrNull(canvas)) {
+    alert("Canvas element not specified");
+    return null;
+  }
+
+  if (typeof canvas === "string") {
+    canvasToUse = getElement(canvas);
+  }
+
+  if (isEmpty(canvasToUse)) {
+    alert("Canvas element not found");
+    return null;
+  }
+
+  const gl = canvasToUse.getContext("webgl2");
+  if (!gl) {
+    alert("WebGL2 context not available");
+    return null;
+  }
+
+  return gl;
+};

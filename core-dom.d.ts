@@ -84,3 +84,10 @@ declare function removeClassFromElement(element: Element, classToRemove: string 
  * @param element The element to show
  */
 declare function showElement(element: Element): void;
+
+/**
+ * Get the WebGL context from a canvas element
+ * @param {string|Element} canvas Canvas element or selector to get the canvas
+ * @returns {WebGL2RenderingContext|null} WebGL2 context or null if not available
+ */
+declare function getWebGLContext(canvas: string | Element): WebGL2RenderingContext | null;
